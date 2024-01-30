@@ -9,14 +9,15 @@ def infobaus_read_csv_file_supplies() -> list:
     Returns:
         list: La lista de diccionarios con la información de los insumos.
     """
-    file_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\csv_file\\Insumos.csv - Hoja 1.csv"
-    list_supplies = read_csv_file_supplies(file_path)
+    list_supplies = return_supplies_list()
 
-    if file_path:
-        print("Se ha leido el archivo correctamente.")
+    if list_supplies:
+
+        print("\nSe ha leído el archivo correctamente.")
         return list_supplies
+    
     else:
-        print("Error al leer el archivo.")
+        print("\nError al leer el archivo.")
         return []
     
 

@@ -34,3 +34,4 @@ def infobaus_show_brand_and_quantity(data_list: list) -> None:
     else:
         print("\nOrigen de datos no valido.")
 
+

@@ -31,10 +31,8 @@ def return_supplies_list() -> list:
 
         supplies.append(products)
 
-        return supplies
+    return supplies
     
-    else:
-        return []
 
 
 def filter_list_by_key_and_quantity(data_list: list, key: str) -> dict:
@@ -61,3 +59,4 @@ def filter_list_by_key_and_quantity(data_list: list, key: str) -> dict:
         return data
     
     return {}
+

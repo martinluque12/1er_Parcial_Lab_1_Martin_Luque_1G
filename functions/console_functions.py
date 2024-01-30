@@ -36,18 +36,18 @@ def generate_separator(pattern: str, long: int, imprimir: bool = True) -> None |
     
 
 def print_list_filtered_by_brand_and_quantity(dictionary: dict) -> None:
-    """Imprime por consola las marcas con sus respectivas cantidades.
+    """Imprime por consola las marcas y las cantidad de productos que hay de esa marca.
 
     Args:
-        dictionary (dict): El diccionarios que contiene las marcas y las cantidades.
+        dictionary (dict): El diccionarios que contiene las marcas y los productos.
     """
     if validate_dict(dictionary):
 
         generate_separator("=", 140)
         print("\nMarca:                Cantidad:")
 
-        for brand, quantity in dictionary.items():
-            print(f"{brand:<25} {quantity}")
+        for brand, product in dictionary.items():
+            print(f"{brand:<25} {len(product)}")
 
         print()
         generate_separator("=", 140)
@@ -56,4 +56,22 @@ def print_list_filtered_by_brand_and_quantity(dictionary: dict) -> None:
         print("\nOrigen de datos no validos.")
 
 
-        
+def print_list_filtered_by_brand_and_products(dictionary: dict) -> None:
+    """Imprime por consola las marcas y los productos que tienen esas marca.
+
+    Args:
+        dictionary (dict): El diccionario que contiene las marcas y los productos.
+    """
+    if validate_dict(dictionary):
+
+        generate_separator("*", 140)
+        print("\nMarca:                     Producto:")
+
+        for brand, products in dictionary.items():
+            print(f"{brand:<25}  {', '.join([product['nombre'].replace(brand + ' ', '') for product in products])}")
+
+        print()
+        generate_separator("=", 140)
+
+    else:
+        print("\nOrigen de datos no validos.")

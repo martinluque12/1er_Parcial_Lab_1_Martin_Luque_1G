@@ -1,7 +1,7 @@
 from validations import *
 from file_manager import *
 from string_manipulation import *
-
+from searches import *
 
 def return_supplies_list() -> list:
     """Retorna la lista de insumos con algunas mejoras.
@@ -60,3 +60,28 @@ def filter_list_by_key_and_item(data_list: list, key: str) -> dict:
 
     return {}
 
+
+def filter_product_by_key(data_list: list, key: str, value: str) -> list:
+    """Filtra una lista de diccionarios según un valor específico en una clave.
+
+    Args:
+        data_list (list): La lista de diccionarios a filtrar.
+        key (str): La clave por la que se va a filtrar.
+        value (str): El valor que se debe encontrar en la clave.
+
+    Returns:
+        list: La lista de diccionarios filtrada.
+    """
+    if(validate_list(data_list) and validate_key_in_list_dict(data_list, key) and
+       validate_str(key) and validate_str(value)):
+
+        data = []
+
+        for item in data_list:
+            if search_match(value, item["caracteristicas"]):
+                data.append(item)
+
+        return data
+
+    else:
+        return []

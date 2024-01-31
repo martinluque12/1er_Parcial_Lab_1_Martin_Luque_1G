@@ -1,6 +1,7 @@
 from file_manager import *
 from console_functions import *
 from data_manipulation import *
+from user_input import *
 
 
 def infobaus_read_csv_file_supplies() -> list:
@@ -49,4 +50,17 @@ def infobaus_show_brand_and_products(data_list: list) -> None:
     else:
         print("\nOrigen de datos no valido.") 
 
+
+def infobaus_search_product_by_feature(data_list: list) -> None:
+    """Busca y muestra los productos por características. 
+
+    Args:
+        data_list (list): La lista de diccionarios con la info de los insumos.
+    """
+    if validate_list(data_list):
+        
+        print_search_product_by_feature(data_list)
+    
+    else:
+        print("\n¡Error! Origen de datos no validos.")
 

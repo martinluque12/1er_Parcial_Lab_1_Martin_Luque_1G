@@ -1,7 +1,8 @@
 import os
 import platform
 from validations import *
-
+from user_input import *
+from data_manipulation import *
 
 def clear_screen() -> None:
     """Limpia la consola.
@@ -34,6 +35,31 @@ def generate_separator(pattern: str, long: int, imprimir: bool = True) -> None |
     else:
         return ""
     
+
+def print_list_supplies(data_list: list) -> None:
+    """Imprime la lista de insumos formateada.
+
+    Args:
+        data_list (list): La lista de diccionarios con la info de los insumos.
+    """
+    if validate_list(data_list):
+
+        generate_separator("-", 140)
+        print("\nID:".ljust(7) + "Producto".ljust(51) + "Marca".ljust(19) + "Precio:".ljust(12) + "Características:")
+
+        for product in data_list:
+            product_id = product["id"]
+            brand = product["marca"]
+            name = product["nombre"].replace(brand + ' ', '')
+            price = product["precio"]
+            feature = product["caracteristicas"]
+            print(f"\n{product_id:<5} {name:<50} {brand:<18} ${price:<10} {feature}")
+            print()
+            generate_separator("-", 140)
+    
+    else:
+        print("\n¡Error! Origen de datos no valido")
+
 
 def print_list_filtered_by_brand_and_quantity(dictionary: dict) -> None:
     """Imprime por consola las marcas y las cantidad de productos que hay de esa marca.
@@ -75,3 +101,26 @@ def print_list_filtered_by_brand_and_products(dictionary: dict) -> None:
 
     else:
         print("\nOrigen de datos no validos.")
+
+
+def print_search_product_by_feature(data_list: list) -> None:
+    """Le pide al usuario que ingrese una característica y le muestra todos los productos
+       que tengan esa característica.
+
+    Args:
+        data_list (list): La lista de diccionarios con la info de los insumos.
+    """
+    if validate_list(data_list):
+
+        while True:
+            feature = request_data_user("\nIngrese una característica del producto a buscar")
+            products_found = filter_product_by_key(data_list, "caracteristicas", feature)
+            if products_found:
+                print_list_supplies(products_found)
+                break
+            else:
+                print("\nNo se encontraron productos con esa característica.")
+                continue
+
+    else:
+        print("\n¡Error! Origen de datos no validos.")

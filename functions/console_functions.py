@@ -4,6 +4,7 @@ from validations import *
 from user_input import *
 from data_manipulation import *
 
+
 def clear_screen() -> None:
     """Limpia la consola.
     """
@@ -124,3 +125,30 @@ def print_search_product_by_feature(data_list: list) -> None:
 
     else:
         print("\n¡Error! Origen de datos no validos.")
+
+
+def print_list_supplies_sorted(data_list: list) -> None:
+    """Imprime por consola la lista ordenada mostrando ID, NOMBRE, PRECIO, MARCA y la primer CARACTERÍSTICA.
+
+    Args:
+        data_list (list): La lista ordenada.
+    """
+    if validate_list(data_list):
+
+        print("\nLista de insumos ordenada por precio descendente y por marca ascendente:\n")
+        generate_separator("*", 140)
+        print("ID:".ljust(6) + "Producto".ljust(51) + "Precio".ljust(12) + "Marca:".ljust(19) + "Característica:")
+        generate_separator("*", 140)
+
+        for product in data_list:
+            product_id = product["id"]
+            brand = product["marca"]
+            name = product["nombre"].replace(brand + ' ', '')
+            price = product["precio"]
+            feature = product["caracteristicas"].split(',')
+            print(f"\n{product_id:<5} {name:<50} ${price:<10} {brand:<18} {feature[0]}")
+            print()
+            generate_separator("-", 140)
+
+    else:
+        print("\n¡Error! Origen de datos no valido.")

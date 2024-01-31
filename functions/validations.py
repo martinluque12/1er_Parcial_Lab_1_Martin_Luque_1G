@@ -1,5 +1,6 @@
 import re
 
+
 def validate_str(string: str) -> bool:
     """Valida que una variable sea de tipo str y que no este vacía.
 

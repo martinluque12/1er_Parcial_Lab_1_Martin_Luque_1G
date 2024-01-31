@@ -3,6 +3,7 @@ from file_manager import *
 from string_manipulation import *
 from searches import *
 
+
 def return_supplies_list() -> list:
     """Retorna la lista de insumos con algunas mejoras.
 
@@ -83,5 +84,36 @@ def filter_product_by_key(data_list: list, key: str, value: str) -> list:
 
         return data
 
+    else:
+        return []
+    
+
+def sort_list_by_two_keys(data_list: list, key_one: str, key_two:str) -> list:
+    """Ordena una lista de diccionarios por dos claves primero de forma descendente y luego de forma ascendente.
+
+    Args:
+        data_list (list): La lista de diccionarios a ordenar.
+        key_one (str): La primer clave por la que se va a ordenar.
+        key_two (str): La segunda clave por la que se va a ordenar.
+
+    Returns:
+        list: La lista ordenada.
+    """
+    if(validate_list(data_list) and validate_key_in_list_dict(data_list, key_one) and
+       validate_key_in_list_dict(data_list, key_two) and validate_str(key_one) and validate_str(key_two)):
+        
+        size_list = len(data_list)
+
+        for i in range(0, size_list -1):
+            for j in range(i + 1, size_list):
+
+                if data_list[i][key_one] < data_list[j][key_one]:
+                    data_list[i], data_list[j] = data_list[j], data_list[i]
+                elif data_list[i][key_one] == data_list[j][key_one]:
+                    if data_list[i][key_two] > data_list[j][key_two]:
+                        data_list[i], data_list[j] = data_list[j], data_list[i]
+
+        return data_list
+    
     else:
         return []

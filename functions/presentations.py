@@ -64,3 +64,18 @@ def infobaus_search_product_by_feature(data_list: list) -> None:
     else:
         print("\n¡Error! Origen de datos no validos.")
 
+
+def infobaus_sort_list_by_price_and_brand(data_list: list) -> None:
+    """Ordena una lista de diccionarios según el precio en descendente y luego por marca en ascendente.
+
+    Args:
+        data_list (list): La lista de diccionarios con la info de los insumos.
+    """
+    if validate_list(data_list):
+
+        sorted_list = sort_list_by_two_keys(data_list, "precio", "marca")
+        print_list_supplies_sorted(sorted_list)
+
+    else:
+        print("\n¡Error! Origen de datos no valido.")
+

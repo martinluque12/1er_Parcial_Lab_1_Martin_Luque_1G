@@ -78,4 +78,3 @@ def infobaus_sort_list_by_price_and_brand(data_list: list) -> None:
 
     else:
         print("\n¡Error! Origen de datos no valido.")
-

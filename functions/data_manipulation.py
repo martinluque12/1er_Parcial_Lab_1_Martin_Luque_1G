@@ -79,7 +79,7 @@ def filter_product_by_key(data_list: list, key: str, value: str) -> list:
         data = []
 
         for item in data_list:
-            if search_match(value, item["caracteristicas"]):
+            if search_match(value, item[key]):
                 data.append(item)
 
         return data

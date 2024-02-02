@@ -92,3 +92,20 @@ def infobaus_make_purchase(product_list: list) -> None:
         list_purchase = make_purchase(product_list)
         print_purchase_total(list_purchase)
 
+
+def infobaus_save_list_hard_drive_json_file(product_list: list) -> None:
+    """Guarda la lista de diccionarios filtrada por productos que en su nombre tengan las palabras "Disco duro",
+       en un archivo JSON.
+
+    Args:
+        product_list (list): La lista de diccionarios con la info de los insumos.
+    """
+    if validate_list(product_list):
+
+        hard_drive_products = filter_list_hard_drive_product(product_list)
+        save_list_hard_drive_json_file(hard_drive_products)
+    else:
+        print("\n¡Error! Origen de datos no valido")
+
+
+lista = infobaus_read_csv_file_supplies()

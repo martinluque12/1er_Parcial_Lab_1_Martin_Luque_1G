@@ -55,9 +55,6 @@ def make_purchase(product_list: list) -> list:
         return []
 
 
-
-
-
 def generate_invoice_purchase(product_list: list) -> bool:
     """Genera la factura de la compra.
 

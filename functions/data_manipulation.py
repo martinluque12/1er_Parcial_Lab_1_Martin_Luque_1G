@@ -162,3 +162,18 @@ def add_key_int_dict(dictionary: dict, key: str, value: int) -> dict:
         return {}
     
 
+def filter_list_hard_drive_product(product_list: list) -> list:
+    """Filtra la lista de diccionarios por los productos que en su nombre lleven las palabras "Disco Duro".
+
+    Args:
+        product_list (list): La lista de diccionarios a filtrar.
+
+    Returns:
+        list: Una lista de diccionarios con los productos que en su nombre lleven las palabras "Disco Duro".
+    """
+    if validate_list(product_list):
+
+        hard_drive_products = filter_product_by_key(product_list, "nombre", "Disco Duro")
+        return hard_drive_products
+    else:
+        return []

@@ -1,4 +1,5 @@
 import os
+import json
 from validations import *
 from casteos import *
 from string_manipulation import *
@@ -75,3 +76,44 @@ def update_last_invoice_number(new_number: int) -> None:
         file.write(str(new_number))
 
 
+def save_list_json_file(data_list: list, folder_path: str, file_name: str) -> bool:
+    """Guarda una lista en un archivo JSON.
+
+    Args:
+        data_list (list): La lista a guardar.
+        folder_path (str): La ruta del archivo.
+        file_name (str): El nombre que tendrá el archivo.
+
+    Returns:
+        bool: True si se pude generar el archivo JSON, False de lo contrario.
+    """
+    if validate_list(data_list) and validate_str(folder_path) and validate_str(file_name):
+
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+        full_path = os.path.join(folder_path, file_name)
+
+        with open (full_path, 'w', encoding='utf-8') as json_file:
+            json.dump(data_list, json_file, indent=2, ensure_ascii=False)
+            return True
+    
+    else:
+        return False
+    
+
+def save_list_hard_drive_json_file(product_list: list) -> None:
+    """Guarda la lista filtrada de productos que en su nombre tengan las palabras "Disco duro" en un archivo JSON.
+
+    Args:
+        product_list (list): La lista de productos que se guardara en el archivo JSON.
+    """
+    if validate_list(product_list):
+        folder_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\json_file"
+        file_name  = "Lista_Productos_Disco_Duro.json"
+        if save_list_json_file(product_list, folder_path, file_name):
+            print("\nLista guardada en archivo JSON exitosamente.")
+        else:
+            print("\nError al guardar lista en archivo JSON.")
+    else:
+        print("\n¡Error! Origen de datos no valido.")

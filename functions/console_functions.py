@@ -152,3 +152,5 @@ def print_list_supplies_sorted(data_list: list) -> None:
 
     else:
         print("\n¡Error! Origen de datos no valido.")
+
+

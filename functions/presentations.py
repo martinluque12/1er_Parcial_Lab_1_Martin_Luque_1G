@@ -2,6 +2,8 @@ from file_manager import *
 from console_functions import *
 from data_manipulation import *
 from user_input import *
+from calculations import *
+from purchase import *
 
 
 def infobaus_read_csv_file_supplies() -> list:
@@ -78,3 +80,15 @@ def infobaus_sort_list_by_price_and_brand(data_list: list) -> None:
 
     else:
         print("\n¡Error! Origen de datos no valido.")
+
+    
+def infobaus_make_purchase(product_list: list) -> None:
+    """Realiza las compras de productos.
+
+    Args:
+        product_list (list): La lista de diccionarios con la info de los insumos.
+    """
+    if validate_list(product_list):
+        list_purchase = make_purchase(product_list)
+        print_purchase_total(list_purchase)
+

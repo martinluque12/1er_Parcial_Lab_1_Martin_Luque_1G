@@ -2,6 +2,7 @@ from validations import *
 from file_manager import *
 from string_manipulation import *
 from searches import *
+from user_input import *
 
 
 def return_supplies_list() -> list:
@@ -117,3 +118,47 @@ def sort_list_by_two_keys(data_list: list, key_one: str, key_two:str) -> list:
     
     else:
         return []
+    
+
+def filter_list_by_brand(product_list: list) -> list:
+    """Filtra la lista de diccionarios por una marca ingresada por el usuario.
+
+    Args:
+        product_list (list): La lista de diccionarios a filtrar.
+
+    Returns:
+        list: Una lista de diccionarios con los productos que sean de la marca ingresada.
+    """
+    if validate_list(product_list):
+
+        brand = request_brand_user(product_list)
+
+        list_brand = filter_product_by_key(product_list, "marca", brand)
+        if list_brand:
+            return list_brand
+        else:
+            return []
+
+    else:
+        return []
+    
+
+def add_key_int_dict(dictionary: dict, key: str, value: int) -> dict:
+    """Agrega una nueva clave a un diccionario y le asigna un valor entero.
+
+    Args:
+        dictionary (dict): El diccionario al cual se le agregara la nueva clave.
+        key (str): La clave que se agregara.
+        value (int): El valor que tendrá la clave
+
+    Returns:
+        dict: El diccionario con la nueva clave ya agregada.
+    """
+    if validate_dict(dictionary) and validate_str(key) and isinstance(value, int):
+
+        dictionary[key.lower()] = value
+        return dictionary
+    else:
+        return {}
+    
+

@@ -26,3 +26,4 @@ def capitalize_word(string: str) -> str:
     
     else:
         return ""
+    

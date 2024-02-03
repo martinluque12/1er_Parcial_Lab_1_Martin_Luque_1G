@@ -108,4 +108,12 @@ def infobaus_save_list_hard_drive_json_file(product_list: list) -> None:
         print("\n¡Error! Origen de datos no valido")
 
 
+def infobaus_read_json_file_hard_drive_products() -> None: 
+    """Lee el archivo JSON de los productos disco duro y los muestra por consola.
+    """
+    folder_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\json_file\\"
+    file_name = "Lista_Productos_Disco_Duro.json"
+    products_hard_drive = read_json_file(folder_path, file_name)
+    print_list_hard_drive_products(products_hard_drive)
+
 lista = infobaus_read_csv_file_supplies()

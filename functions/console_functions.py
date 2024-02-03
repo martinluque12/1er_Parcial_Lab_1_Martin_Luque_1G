@@ -154,3 +154,19 @@ def print_list_supplies_sorted(data_list: list) -> None:
         print("\n¡Error! Origen de datos no valido.")
 
 
+def print_list_hard_drive_products(product_list: list) -> None:
+    """Imprime por consola la lista de productos disco duro.
+
+    Args:
+        product_list (list): La lista de diccionarios con la info de los productos disco duro.
+    """
+    if validate_list(product_list):
+
+        generate_separator("*", 140)
+        print("\nLista de productos Disco Duro:")
+        if product_list:
+            print_list_supplies(product_list)
+        else:
+            print("\n¡Lista de productos vacía!")
+    else:
+        print("\n¡Error! Origen de datos no validos.")

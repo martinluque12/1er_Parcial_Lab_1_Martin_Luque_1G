@@ -117,3 +117,29 @@ def save_list_hard_drive_json_file(product_list: list) -> None:
             print("\nError al guardar lista en archivo JSON.")
     else:
         print("\n¡Error! Origen de datos no valido.")
+
+
+def read_json_file(folder_path: str, file_name: str) -> list:
+    """Lee un archivo json y lo convierte en una lista de diccionarios.
+
+    Args:
+        folder_path (str): La ruta del archivo.
+        file_name (str): El nombre del archivo.
+
+    Returns:
+        list: Una lista de diccionarios con el contenido leído.
+    """
+    if validate_str(folder_path) and validate_str(file_name):
+
+        full_path = os.path.join(folder_path, file_name)
+
+        if os.path.exists(full_path):
+            with open(full_path, 'r', encoding='utf-8') as json_file:
+
+                data_list = json.load(json_file)
+                return data_list
+            0
+        else:
+            return []
+    else:
+        return []

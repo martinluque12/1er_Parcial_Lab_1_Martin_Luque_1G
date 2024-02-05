@@ -129,13 +129,15 @@ def infobaus_update_csv_file_supplies(product_list: list) -> None:
             product.pop("cantidad", None)
 
         update_list = update_product_prices(product_list)
-        folder_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\csv_file\insumos_actualizados.csv"
-        if save_list_csv_file(update_list, folder_path):
+        folder_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\csv_file"
+        file_name = "insumos_actualizados.csv"
+
+        if save_list_csv_file(update_list, folder_path, file_name):
             print("\nArchivo CSV actualizado correctamente.")
         else:
             print("\nError al intentar actualizar el archivo CSV.")
     else:
-        print("\n¡Error! Origen de datos no valido.")
+        print("\n¡Error! Origen de datos no válido.")
 
 
 def infobaus_menu() -> None:

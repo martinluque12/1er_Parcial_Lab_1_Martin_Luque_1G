@@ -78,14 +78,8 @@ def filter_product_by_key(data_list: list, key: str, value: str) -> list:
     if(validate_list(data_list) and validate_key_in_list_dict(data_list, key) and
        validate_str(key) and validate_str(value)):
 
-        data = []
-
-        for item in data_list:
-            if search_match(value, item[key]):
-                data.append(item)
-
-        return data
-
+        filtered_data = filter(lambda x: search_match(value, x[key]), data_list)
+        return list(filtered_data)
     else:
         return []
     
@@ -181,7 +175,14 @@ def filter_list_hard_drive_product(product_list: list) -> list:
     
 
 def update_product_prices(product_list: list) -> list:
+    """Actualiza el precio de todos los productos en la lista.
 
+    Args:
+        product_list (list): La lista de diccionarios a actualizar.
+
+    Returns:
+        list: La lista de diccionarios con los precios actualizados.
+    """
     if validate_list(product_list):
         update_products = list(map(apply_price_increase_product, product_list))
 

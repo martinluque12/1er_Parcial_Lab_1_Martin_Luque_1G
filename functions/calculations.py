@@ -1,3 +1,4 @@
+from functools import reduce
 from validations import *
 
 def calculate_subtotal_purchase(product: dict) -> float:
@@ -27,12 +28,8 @@ def calculate_total_purchase(product_list: list) -> float:
     """
     if validate_list(product_list):
 
-        total_purchase = 0
-
-        for product in product_list:
-            total_purchase += product["precio"] * product["cantidad"]
-    
-        return total_purchase
+        total_purchase = reduce(lambda acc, product: acc + (product["precio"] * product["cantidad"]), product_list, 0)
+        return round(total_purchase, 2)
     
 
 def apply_increase(increase: float, value: float) -> float:

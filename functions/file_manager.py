@@ -166,7 +166,10 @@ def save_list_csv_file(data_list: list, folder_path: str, file_name: str) -> boo
         with open(full_path, 'w', newline='', encoding='utf-8') as csv_file:
             csv_writer = csv.DictWriter(csv_file, fieldnames=data_list[0].keys())
             csv_writer.writeheader()
-            csv_writer.writerows(data_list)
+
+            new_list = sorted(data_list, key=lambda x: x["id"])
+
+            csv_writer.writerows(new_list)
 
         return True
     else:

@@ -129,7 +129,7 @@ def infobaus_update_csv_file_supplies(product_list: list) -> None:
             product.pop("cantidad", None)
 
         update_list = update_product_prices(product_list)
-        folder_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\csv_file\productos_actualizados.csv"
+        folder_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\csv_file\insumos_actualizados.csv"
         if save_list_csv_file(update_list, folder_path):
             print("\nArchivo CSV actualizado correctamente.")
         else:

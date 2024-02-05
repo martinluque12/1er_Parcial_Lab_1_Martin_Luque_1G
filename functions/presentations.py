@@ -116,4 +116,26 @@ def infobaus_read_json_file_hard_drive_products() -> None:
     products_hard_drive = read_json_file(folder_path, file_name)
     print_list_hard_drive_products(products_hard_drive)
 
+
+def infobaus_update_csv_file_supplies(product_list: list) -> None:
+    """Actualiza el archivo CSV con la info de los productos actualizadas.
+
+    Args:
+        product_list (list): La lista de diccionarios con la info de los insumos.
+    """
+    if validate_list(product_list):
+
+        update_list = update_product_prices(product_list)
+        folder_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\csv_file\productos_actualizados.csv"
+        if save_list_csv_file(update_list, folder_path):
+            print("\nArchivo CSV actualizado correctamente.")
+        else:
+            print("\nError al intentar actualizar el archivo CSV.")
+    else:
+        print("\n¡Error! Origen de datos no valido.")
+
+
 lista = infobaus_read_csv_file_supplies()
+
+
+

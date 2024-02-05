@@ -1,5 +1,6 @@
 import os
 import json
+import csv
 from validations import *
 from casteos import *
 from string_manipulation import *
@@ -143,3 +144,29 @@ def read_json_file(folder_path: str, file_name: str) -> list:
             return []
     else:
         return []
+    
+
+def save_list_csv_file(data_list: list, folder_path: str) -> bool:
+    """Guarda una lista de diccionarios en un archivo CSV.
+
+    Args:
+        data_list (list): La lista que se guardara en el archivo CSV
+        folder_path (str): La ruta del archivo CSV.
+
+    Returns:
+        bool: True si se pudo guardar el archivo CSV, False de lo contrario.
+    """
+    if validate_list(data_list) and validate_str(folder_path):
+
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+        with open(folder_path, 'w', newline='', encoding='utf-8') as csv_file:
+            
+            csv_writer = csv.DictWriter(csv_file, fieldnames=data_list[0].keys())
+            csv_writer.writeheader()
+            csv_writer.writerows(data_list)
+
+        return True
+    else:
+        return False

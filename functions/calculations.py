@@ -33,3 +33,44 @@ def calculate_total_purchase(product_list: list) -> float:
             total_purchase += product["precio"] * product["cantidad"]
     
         return total_purchase
+    
+
+def apply_increase(increase: float, value: float) -> float:
+    """Aplica un aumento a una variable de tipo float.
+
+    Args:
+        increase (float): El aumento que se aplicara.
+        value (float): La variable sobre la cual se va a aplicar el aumento.
+
+    Returns:
+        float: EL resultado de aplicarle el aumento a la variable.
+    """
+    if isinstance(increase, float) and isinstance(value, float):
+
+        result = value + (increase * value) // 100
+
+        return round(result, 2)
+    
+    else:
+        return 0
+
+
+def apply_price_increase_product(product: dict) -> dict:
+    """Aplica un aumento al precio de un producto.
+
+    Args:
+        product (dict): El producto al cual se le aplicara el aumento.
+
+    Returns:
+        dict: El producto con el precio actualizado.
+    """
+    if validate_dict(product):
+        increase = 8.4
+        product["precio"] = apply_increase(increase, product["precio"])
+
+        return product
+    else:
+        return {}
+    
+
+

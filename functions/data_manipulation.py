@@ -3,6 +3,7 @@ from file_manager import *
 from string_manipulation import *
 from searches import *
 from user_input import *
+from calculations import *
 
 
 def return_supplies_list() -> list:
@@ -175,5 +176,15 @@ def filter_list_hard_drive_product(product_list: list) -> list:
 
         hard_drive_products = filter_product_by_key(product_list, "nombre", "Disco Duro")
         return hard_drive_products
+    else:
+        return []
+    
+
+def update_product_prices(product_list: list) -> list:
+
+    if validate_list(product_list):
+        update_products = list(map(apply_price_increase_product, product_list))
+
+        return update_products
     else:
         return []

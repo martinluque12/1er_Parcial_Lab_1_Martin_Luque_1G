@@ -125,6 +125,9 @@ def infobaus_update_csv_file_supplies(product_list: list) -> None:
     """
     if validate_list(product_list):
 
+        for product in product_list:
+            product.pop("cantidad", None)
+
         update_list = update_product_prices(product_list)
         folder_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\csv_file\productos_actualizados.csv"
         if save_list_csv_file(update_list, folder_path):
@@ -135,7 +138,72 @@ def infobaus_update_csv_file_supplies(product_list: list) -> None:
         print("\n¡Error! Origen de datos no valido.")
 
 
-lista = infobaus_read_csv_file_supplies()
+def infobaus_menu() -> None:
+    """Menu principal del Software, permite que el usuario se maneje por el menu de opciones.
+    """
+    flag_read_csv = False
 
+    while True:
+        clear_screen()
 
+        option = request_option_user(menu())
 
+        match option:
+
+            case "1":
+                if not flag_read_csv:
+                    product_list = infobaus_read_csv_file_supplies()
+                    flag_read_csv = True
+                else:
+                    print("\nYa se han traído los datos desde el archivo CSV.")
+            case "2":
+                if flag_read_csv:
+                    infobaus_show_brand_and_quantity(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "3":
+                if flag_read_csv:
+                    infobaus_show_brand_and_products(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "4":
+                if flag_read_csv:
+                    infobaus_search_product_by_feature(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "5":
+                if flag_read_csv:
+                    infobaus_sort_list_by_price_and_brand(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "6":
+                if flag_read_csv:
+                    infobaus_make_purchase(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "7":
+                if flag_read_csv:
+                    infobaus_save_list_hard_drive_json_file(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "8":
+                if flag_read_csv:
+                    infobaus_read_json_file_hard_drive_products()
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "9":
+                if flag_read_csv:
+                    infobaus_update_csv_file_supplies(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "0":
+                if request_confirmation_user("\n¿Desea salir del programa?"):
+                    print("\nGracias por usar nuestro software.")
+                    break
+                else:
+                    continue
+            case _:
+                print("\nOpción no valida, vuelva a intentarlo.")
+                
+        
+        input("\nPresione Enter para continuar...")

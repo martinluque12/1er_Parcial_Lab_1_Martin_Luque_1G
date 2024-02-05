@@ -1,17 +1,10 @@
 [
   {
-    "id": 1,
-    "nombre": "Disco Duro Interno",
-    "marca": "Western Digital",
-    "precio": 79.99,
-    "caracteristicas": "1TB, 7200RPM"
-  },
-  {
-    "id": 2,
-    "nombre": "Disco Duro Externo",
-    "marca": "Toshiba",
-    "precio": 119.99,
-    "caracteristicas": "2TB, USB 3.0, Resistente a golpes"
+    "id": 30,
+    "nombre": "Disco Duro Externo Ssd",
+    "marca": "Sandisk",
+    "precio": 199.99,
+    "caracteristicas": "Capacidad de 1TB, Velocidad de transferencia de hasta 1050MB/s, Resistente al agua y al polvo"
   },
   {
     "id": 13,
@@ -21,11 +14,11 @@
     "caracteristicas": "4TB, USB 3.0, Resistente a golpes y vibraciones"
   },
   {
-    "id": 30,
-    "nombre": "Disco Duro Externo Ssd",
-    "marca": "Sandisk",
-    "precio": 199.99,
-    "caracteristicas": "Capacidad de 1TB, Velocidad de transferencia de hasta 1050MB/s, Resistente al agua y al polvo"
+    "id": 2,
+    "nombre": "Disco Duro Externo",
+    "marca": "Toshiba",
+    "precio": 119.99,
+    "caracteristicas": "2TB, USB 3.0, Resistente a golpes"
   },
   {
     "id": 42,
@@ -33,5 +26,12 @@
     "marca": "Seagate",
     "precio": 99.99,
     "caracteristicas": "Capacidad de 2TB, Conexión USB 3.0, Compatible con Windows y Mac"
+  },
+  {
+    "id": 1,
+    "nombre": "Disco Duro Interno",
+    "marca": "Western Digital",
+    "precio": 79.99,
+    "caracteristicas": "1TB, 7200RPM"
   }
 ]

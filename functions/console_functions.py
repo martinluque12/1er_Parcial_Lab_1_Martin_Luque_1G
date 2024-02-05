@@ -170,3 +170,23 @@ def print_list_hard_drive_products(product_list: list) -> None:
             print("\n¡Lista de productos vacía!")
     else:
         print("\n¡Error! Origen de datos no validos.")
+
+
+def menu() -> str:
+    """Imprime el menu de la app en consola.
+    """
+    menu = """                          Bienvenidos a *INFOBAUS*
+
+    1 - Trae datos desde el archivo CSV.
+    2 - Listar las marcas disponibles y la cantidad de productos de cada marca.
+    3 - Listar las marcas y los productos de cada marca.
+    4 - Buscar insumo.
+    5 - Listar los productos ordenados por precio descendente y por nombre de la A a la Z.
+    6 - Realizar compra.
+    7 - Guardar en archivo JSON los productos "Disco duro".
+    8 - Leer archivo JSON con los productos "Disco duro".
+    9 - Actualizar precios.
+    0 - Salir del programa.
+    __________________________________________________________________________
+    """
+    return menu

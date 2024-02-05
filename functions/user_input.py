@@ -123,3 +123,18 @@ def request_confirmation_user(message: str) -> bool:
                 continue
     else:
         return False
+    
+
+def request_option_user(menu: str) -> str | int:
+    """Le pide al usuario que ingrese una opción para desplazarse por el menu de opciones.
+
+    Returns:
+        str | int: Devuelve un string que representa la opción elegida por el usuario o -1 en caso de error.
+    """
+    print(menu)
+
+    option = input("   > ")
+    if re.search("^[0-9]$", option):
+        return option
+    else:
+        return -1

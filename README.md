@@ -33,9 +33,9 @@
 * Python 3.x
 
 * Archivos Insumos.csv, marcas.txt
-* 
+  
 * Librerías: json
-* 
+  
 <h2>Uso</h2>
 * Clona el repositorio o descarga los archivos.
 

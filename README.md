@@ -1,8 +1,8 @@
 <div align="center">
-   <h1>Administrador de Insumos para InfoBaus</h1>
+   <h1>🖥️Administrador de Insumos para InfoBaus🖥️</h1>
 </div>
 <div>
-  <h2>Este es un programa diseñado para administrar los insumos de InfoBaus, permitiendo al usuario realizar diversas operaciones como la gestión de datos desde un archivo CSV, listar insumos por marca, buscar insumos por características, realizar compras, entre otras funciones.</h2>
+  <h2>📱Este es un programa diseñado para administrar los insumos de InfoBaus, permitiendo al usuario realizar diversas operaciones como la gestión de datos desde un archivo CSV, listar insumos por marca, buscar insumos por características, realizar compras, entre otras funciones.📱</h2>
 </div>
 
 <h2>Funcionalidades</h2>
@@ -46,4 +46,4 @@
 * Sigue las instrucciones en pantalla para utilizar las diferentes funcionalidades del programa.
 
 <div align="center">
-  <h1>¡Disfruta administrando tus insumos con InfoBaus!</h1>
+  <h1>🕹️¡Disfruta administrando tus insumos con InfoBaus!🕹️</h1>

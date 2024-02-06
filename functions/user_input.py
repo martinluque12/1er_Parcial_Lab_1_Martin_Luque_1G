@@ -36,7 +36,7 @@ def request_brand_user(product_list: list) -> str:
         flag_brand = False
         while True:
 
-            brand = request_data_user("\nIngrese la marca que desea buscar")
+            brand = request_data_user("\nIngrese la marca")
 
             for product in product_list:
                 if search_match(brand, product["marca"]):
@@ -134,7 +134,7 @@ def request_option_user(menu: str) -> str | int:
     print(menu)
 
     option = input("   > ")
-    if re.search("^[0-9]$", option):
+    if re.search("^\d+$", option) and 0 <= int(option) <= 11:
         return option
     else:
         return -1

@@ -180,12 +180,14 @@ def menu() -> str:
     1 - Trae datos desde el archivo CSV.
     2 - Listar las marcas disponibles y la cantidad de productos de cada marca.
     3 - Listar las marcas y los productos de cada marca.
-    4 - Buscar insumo.
+    4 - Buscar insumo por marca.
     5 - Listar los productos ordenados por precio descendente y por nombre de la A a la Z.
     6 - Realizar compra.
     7 - Guardar en archivo JSON los productos "Disco duro".
     8 - Leer archivo JSON con los productos "Disco duro".
     9 - Actualizar precios.
+    10 - Agregar producto.
+    11 - Guardar lista actualizada en archivo. 
     0 - Salir del programa.
     __________________________________________________________________________
     """

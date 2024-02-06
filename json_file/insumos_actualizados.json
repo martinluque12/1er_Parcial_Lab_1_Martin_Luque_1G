@@ -1,0 +1,359 @@
+[
+  {
+    "id": 1,
+    "nombre": "Disco Duro Interno",
+    "marca": "Western Digital",
+    "precio": 79.99,
+    "caracteristicas": "1TB, 7200RPM"
+  },
+  {
+    "id": 2,
+    "nombre": "Disco Duro Externo",
+    "marca": "Toshiba",
+    "precio": 119.99,
+    "caracteristicas": "2TB, USB 3.0, Resistente a golpes"
+  },
+  {
+    "id": 3,
+    "nombre": "Ssd Interno",
+    "marca": "Samsung",
+    "precio": 99.99,
+    "caracteristicas": "500GB, NVMe PCIe Gen 4.0, Velocidad de lectura de hasta 7000MB/s"
+  },
+  {
+    "id": 4,
+    "nombre": "Memoria Ram",
+    "marca": "Corsair",
+    "precio": 89.99,
+    "caracteristicas": "16GB, DDR4, Velocidad de 3200MHz"
+  },
+  {
+    "id": 5,
+    "nombre": "Tarjeta De Video",
+    "marca": "Msi",
+    "precio": 299.99,
+    "caracteristicas": "NVIDIA GeForce RTX 3060, 12GB GDDR6, DirectX 12 Ultimate"
+  },
+  {
+    "id": 6,
+    "nombre": "Monitor Led",
+    "marca": "Dell",
+    "precio": 199.99,
+    "caracteristicas": "21.5 pulgadas, Resolución Full HD, Puertos HDMI y VGA"
+  },
+  {
+    "id": 7,
+    "nombre": "Teclado Mecánico",
+    "marca": "Razer",
+    "precio": 129.99,
+    "caracteristicas": "Teclas retroiluminadas, Diseño ergonómico, Conexión USB"
+  },
+  {
+    "id": 8,
+    "nombre": "Ratón Inalámbrico",
+    "marca": "Logitech",
+    "precio": 39.99,
+    "caracteristicas": "Conexión inalámbrica 2.4GHz, Diseño ambidiestro, Sensor óptico de alta precisión"
+  },
+  {
+    "id": 9,
+    "nombre": "Auriculares Con Micrófono",
+    "marca": "Hyperx",
+    "precio": 89.99,
+    "caracteristicas": "Sonido envolvente 7.1, Micrófono desmontable, Diadema ajustable"
+  },
+  {
+    "id": 10,
+    "nombre": "Impresora Multifuncional",
+    "marca": "Epson",
+    "precio": 299.99,
+    "caracteristicas": "Impresión a doble cara automática, Velocidad de impresión de hasta 20 ppm, Conexión Wi-Fi"
+  },
+  {
+    "id": 11,
+    "nombre": "Altavoces De Pc",
+    "marca": "Logitech",
+    "precio": 49.99,
+    "caracteristicas": "2.1 canales, Potencia de salida de 40W, Control de graves y agudos"
+  },
+  {
+    "id": 12,
+    "nombre": "Cámara Web",
+    "marca": "Microsoft",
+    "precio": 79.99,
+    "caracteristicas": "Resolución Full HD, Micrófono incorporado, Conexión USB"
+  },
+  {
+    "id": 13,
+    "nombre": "Disco Duro Portátil",
+    "marca": "Seagate",
+    "precio": 129.99,
+    "caracteristicas": "4TB, USB 3.0, Resistente a golpes y vibraciones"
+  },
+  {
+    "id": 14,
+    "nombre": "Procesador Intel Core I7",
+    "marca": "Intel",
+    "precio": 399.99,
+    "caracteristicas": "8 núcleos, Frecuencia de 2.8 GHz, Tecnología Hyper-Threading"
+  },
+  {
+    "id": 15,
+    "nombre": "Tarjeta De Sonido Externa",
+    "marca": "Focusrite",
+    "precio": 149.99,
+    "caracteristicas": "2 entradas XLR, 2 salidas de línea, Resolución de hasta 24-bit/192kHz"
+  },
+  {
+    "id": 16,
+    "nombre": "Smartphone Samsung Galaxy S21",
+    "marca": "Samsung",
+    "precio": 799.99,
+    "caracteristicas": "Pantalla AMOLED de 6.2 pulgadas, Procesador Exynos 2100, Cámara trasera de 64 MP"
+  },
+  {
+    "id": 17,
+    "nombre": "Smartwatch Apple Watch Series 6",
+    "marca": "Apple",
+    "precio": 399.99,
+    "caracteristicas": "Monitorización del ritmo cardíaco, GPS integrado, Resistente al agua"
+  },
+  {
+    "id": 18,
+    "nombre": "Router Inalámbrico",
+    "marca": "Tp-link",
+    "precio": 79.99,
+    "caracteristicas": "Soporta Wi-Fi 6, Velocidad de hasta 3000 Mbps, Puertos"
+  },
+  {
+    "id": 19,
+    "nombre": "Tablet Apple Ipad Air",
+    "marca": "Apple",
+    "precio": 599.99,
+    "caracteristicas": "Pantalla Liquid Retina de 10.9 pulgadas, Chip A14 Bionic, Compatible con Apple Pencil y Magic Keyboard"
+  },
+  {
+    "id": 20,
+    "nombre": "Altavoz Inteligente Amazon Echo Dot",
+    "marca": "Amazon",
+    "precio": 49.99,
+    "caracteristicas": "Asistente de voz Alexa integrado, Conexión Wi-Fi y Bluetooth, Compatible con otros dispositivos inteligentes"
+  },
+  {
+    "id": 21,
+    "nombre": "Teclado Y Ratón Inalámbricos",
+    "marca": "Hp",
+    "precio": 39.99,
+    "caracteristicas": "Conexión inalámbrica 2.4GHz, Teclado de tamaño completo, Ratón óptico de tres botones"
+  },
+  {
+    "id": 22,
+    "nombre": "Adaptador Usb-c A Hdmi",
+    "marca": "Anker",
+    "precio": 19.99,
+    "caracteristicas": "Resolución de hasta 4K a 60Hz, Compatible con MacBook"
+  },
+  {
+    "id": 23,
+    "nombre": "Hub Usb 3.0 De 4 Puertos",
+    "marca": "Ugreen",
+    "precio": 12.99,
+    "caracteristicas": "Velocidad de transferencia de hasta 5Gbps, Compatible con dispositivos USB 2.0 y 1.1, Conexión Plug and Play"
+  },
+  {
+    "id": 24,
+    "nombre": "Escáner De Documentos",
+    "marca": "Epson",
+    "precio": 249.99,
+    "caracteristicas": "Resolución óptica de 1200 dpi, Velocidad de escaneo de hasta 35 ppm, Alimentador automático de documentos de 50 páginas"
+  },
+  {
+    "id": 25,
+    "nombre": "Monitor Curvo Samsung",
+    "marca": "Samsung",
+    "precio": 279.99,
+    "caracteristicas": "Resolución Full HD, Tamaño de 27 pulgadas, Frecuencia de actualización de 75Hz"
+  },
+  {
+    "id": 26,
+    "nombre": "Auriculares Inalámbricos",
+    "marca": "Apple",
+    "precio": 159.99,
+    "caracteristicas": "Conexión inalámbrica Bluetooth, Micrófono y controles integrados, Autonomía de hasta 5 horas"
+  },
+  {
+    "id": 27,
+    "nombre": "Cargador Portátil Anker Powercore",
+    "marca": "Anker",
+    "precio": 59.99,
+    "caracteristicas": "Capacidad de 10000mAh, 2 puertos USB, Tecnología PowerIQ para carga rápida"
+  },
+  {
+    "id": 28,
+    "nombre": "Módem De Cable",
+    "marca": "Arris",
+    "precio": 89.99,
+    "caracteristicas": "Velocidad de descarga de hasta 686 Mbps, Compatible con la mayoría de los proveedores de servicios de Internet, Conexión Gigabit Ethernet"
+  },
+  {
+    "id": 29,
+    "nombre": "Adaptador Wi-fi Usb",
+    "marca": "Tp-link",
+    "precio": 19.99,
+    "caracteristicas": "Velocidad de hasta 150Mbps, Conexión Plug and Play, Compatible con Windows y Mac"
+  },
+  {
+    "id": 30,
+    "nombre": "Disco Duro Externo Ssd",
+    "marca": "Sandisk",
+    "precio": 199.99,
+    "caracteristicas": "Capacidad de 1TB, Velocidad de transferencia de hasta 1050MB/s, Resistente al agua y al polvo"
+  },
+  {
+    "id": 31,
+    "nombre": "Tarjeta De Red Ethernet",
+    "marca": "Intel",
+    "precio": 39.99,
+    "caracteristicas": "Velocidad de transferencia de hasta 1Gbps, Conexión PCIe, Compatible con Windows y Linux"
+  },
+  {
+    "id": 32,
+    "nombre": "Router Vpn",
+    "marca": "Netgear",
+    "precio": 179.99,
+    "caracteristicas": "Velocidad de hasta 300Mbps, Soporta hasta 20 conexiones VPN, Firewall integrado"
+  },
+  {
+    "id": 33,
+    "nombre": "Altavoz Bluetooth Jbl Flip 5",
+    "marca": "Jbl",
+    "precio": 119.99,
+    "caracteristicas": "Conexión Bluetooth, Autonomía de hasta 12 horas, Resistente al agua y al polvo"
+  },
+  {
+    "id": 34,
+    "nombre": "Memoria Ram Corsair Vengeance Lpx",
+    "marca": "Corsair",
+    "precio": 109.99,
+    "caracteristicas": "16GB de capacidad, Velocidad de 3200MHz, Diseño de perfil bajo"
+  },
+  {
+    "id": 35,
+    "nombre": "Cámara De Seguridad Wifi",
+    "marca": "Tp-link",
+    "precio": 54.99,
+    "caracteristicas": "Resolución Full HD, Visión nocturna hasta 30 pies, Notificaciones de detección de movimiento"
+  },
+  {
+    "id": 36,
+    "nombre": "Monitor Gaming Asus Tuf",
+    "marca": "Asus",
+    "precio": 279.99,
+    "caracteristicas": "Resolución Full HD, Tamaño de 24.5 pulgadas, Frecuencia de actualización de 144Hz"
+  },
+  {
+    "id": 37,
+    "nombre": "Impresora Multifunción Hp Officejet Pro",
+    "marca": "Hp",
+    "precio": 229.99,
+    "caracteristicas": "Impresión"
+  },
+  {
+    "id": 38,
+    "nombre": "Smartphone Samsung Galaxy S21",
+    "marca": "Samsung",
+    "precio": 799.99,
+    "caracteristicas": "Pantalla Dynamic AMOLED de 6.2 pulgadas, Procesador Exynos 2100, Cámara trasera de 64MP"
+  },
+  {
+    "id": 39,
+    "nombre": "Auriculares Con Cancelación De Ruido Sony Wh-1000xm4",
+    "marca": "Sony",
+    "precio": 349.99,
+    "caracteristicas": "Cancelación de ruido líder en la industria, Autonomía de hasta 30 horas, Control táctil"
+  },
+  {
+    "id": 40,
+    "nombre": "Teclado Mecánico Corsair K95 Rgb Platinum Xt",
+    "marca": "Corsair",
+    "precio": 199.99,
+    "caracteristicas": "Interruptores Cherry MX Speed, Retroiluminación RGB por tecla, Descanso de muñeca desmontable"
+  },
+  {
+    "id": 41,
+    "nombre": "Webcam Logitech C920",
+    "marca": "Logitech",
+    "precio": 79.99,
+    "caracteristicas": "Resolución Full HD, Micrófonos estéreo integrados, Enfoque automático"
+  },
+  {
+    "id": 42,
+    "nombre": "Disco Duro Externo Seagate Backup Plus",
+    "marca": "Seagate",
+    "precio": 99.99,
+    "caracteristicas": "Capacidad de 2TB, Conexión USB 3.0, Compatible con Windows y Mac"
+  },
+  {
+    "id": 43,
+    "nombre": "Smart Tv Lg Oled",
+    "marca": "Lg",
+    "precio": 1499.99,
+    "caracteristicas": "Resolución 4K, Tamaño de 55 pulgadas, Sistema operativo webOS"
+  },
+  {
+    "id": 44,
+    "nombre": "Repetidor Wi-fi Netgear Nighthawk",
+    "marca": "Netgear",
+    "precio": 129.99,
+    "caracteristicas": "Velocidad de hasta 1900Mbps, Tecnología Beamforming para mayor alcance, Puerto Ethernet Gigabit"
+  },
+  {
+    "id": 45,
+    "nombre": "Tarjeta Gráfica Nvidia Geforce Rtx 3070",
+    "marca": "Nvidia",
+    "precio": 699.99,
+    "caracteristicas": "8GB de memoria GDDR6, Arquitectura Ampere de segunda generación, Soporte de trazado de rayos en tiempo real"
+  },
+  {
+    "id": 46,
+    "nombre": "Altavoces Para Pc Logitech Z623",
+    "marca": "Logitech",
+    "precio": 119.99,
+    "caracteristicas": "Potencia total de 200W RMS, Subwoofer con control de graves, Entrada RCA y auxiliar de 3.5mm"
+  },
+  {
+    "id": 47,
+    "nombre": "Mouse Inalámbrico Logitech Mx Master 3",
+    "marca": "Logitech",
+    "precio": 99.99,
+    "caracteristicas": "Conexión inalámbrica Bluetooth o receptor USB, Rueda de desplazamiento electromagnética, Botones personalizables"
+  },
+  {
+    "id": 48,
+    "nombre": "Unidad Ssd Interna Samsung 970 Evo Plus",
+    "marca": "Samsung",
+    "precio": 199.99,
+    "caracteristicas": "Capacidad de 1TB, Velocidad"
+  },
+  {
+    "id": 49,
+    "nombre": "Router Asus Rt-ac88u",
+    "marca": "Asus",
+    "precio": 279.99,
+    "caracteristicas": "Velocidad de hasta 3100Mbps, Procesador dual-core de 1.4GHz, Tecnología MU-MIMO"
+  },
+  {
+    "id": 50,
+    "nombre": "Altavoz Inteligente Amazon Echo Dot",
+    "marca": "Amazon",
+    "precio": 49.99,
+    "caracteristicas": "Asistente de voz Alexa integrado, Conexión Wi-Fi y Bluetooth, Control de dispositivos inteligentes"
+  },
+  {
+    "id": 51,
+    "nombre": "aire acondicionado",
+    "marca": "samsung",
+    "precio": 100000,
+    "caracteristicas": "aire/calor, 3500 frigorías, con Bluetooth"
+  }
+]

@@ -198,6 +198,16 @@ def infobaus_menu() -> None:
                     infobaus_update_csv_file_supplies(product_list)
                 else:
                     print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "10":
+                if flag_read_csv:
+                    infobaus_add_new_product(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
+            case "11":
+                if flag_read_csv:
+                    infobaus_save_list_product_file(product_list)
+                else:
+                    print("\nPrimero, debe leer los datos desde el archivo CSV.")
             case "0":
                 if request_confirmation_user("\n¿Desea salir del programa?"):
                     print("\nGracias por usar nuestro software.")
@@ -209,3 +219,264 @@ def infobaus_menu() -> None:
                 
         
         input("\nPresione Enter para continuar...")
+
+
+def request_product_name() -> str:
+    """Solicita al usuario que ingrese un nombre de producto.
+    """
+    while True:
+        product_name = request_data_user("\nIngrese el nombre del producto")
+        if product_name:
+            return product_name
+        else:
+            print("\n¡Error! Debe ingresar el nombre del producto, vuelva a intentarlo.")
+            continue
+
+
+
+def read_txt_file(file_path: str) -> list:
+    """Lee un archivo TXT y devuelve una lista con su contenido.
+
+    Args:
+        file_path (str): La ruta del archivo TXT.
+
+    Returns:
+        list: Una lista con el contenido del archivo TXT.
+    """
+    if validate_str(file_path):
+        lines = []
+
+        with open(file_path, 'r') as txt_file:
+            for line in txt_file:
+                lines.append(line.strip())
+
+        return lines
+    else:
+        return []
+
+
+def convert_list_brand_dict() -> list:
+    """Convierte una lista de marcas en una lista de diccionarios con la clave "marca".
+
+    Returns:
+        list: Una lista de diccionarios con la clave "marca" y el valor correspondiente.
+    """
+    brands = read_txt_file("1er_Parcial_Lab_1_Martin_Luque_1G\\txt_file\\marcas.txt")
+    list_brand = []
+
+    for brand in brands:
+        list_brand.append({"marca": brand})
+    
+    return list_brand
+    
+
+
+def print_list_brand(brands: list) -> None:
+    """Imprime por consola las marcas de una lista de diccionarios.
+
+    Args:
+        brands (list): La lista de diccionarios.
+    """
+    if validate_list(brands):
+        print("\nMarcas disponibles:")
+        generate_separator("-", 40)
+
+        for i, brand in enumerate(brands, start=1):
+            print(f"{i}. {brand['marca']}")
+
+        generate_separator("-", 40)
+    else:
+        print("\n¡Error! Origen de datos no validos.")
+
+
+def request_price_product() -> float | int:
+    """Le pide al usuario que ingrese un precio para un producto.
+
+    Returns:
+        float | int: El precio ingresado por el usuario casteado a float o a int.
+    """
+    while True:
+        price = request_data_user("\nIngrese el precio del producto")
+        
+        if validate_float(price):
+            return castear_float(price)
+        elif validate_int(price):
+            return castear_int(price)
+        else:
+            print("\n¡Error! Debe ingresar caracteres numéricos, vuelva a intentarlo.")
+            continue
+
+def request_features_product() -> list:
+    """Le pide al usuario que ingrese la/las características del producto (Mínima 1, Máxima 3)
+
+    Returns:
+        list: Una lista con las características ingresadas.
+    """
+    features = []
+        
+    while True:
+        feature = request_data_user("\nIngrese la/las características (mínimo 1, máximo 3)")
+        features.append(feature)
+
+        if len(features) < 3:
+            confirmation = request_confirmation_user("\n¿Quiere seguir ingresando características?")
+            if confirmation:
+                continue
+            else:
+                break
+        else:
+           break
+
+    return features
+
+
+def convert_list_str(data_list: list) -> str:
+    """Convierte una lista de str a un string separado por ", ".
+
+    Args:
+        data_list (list): La lista de str que se va convertir en un string.
+
+    Returns:
+        str: El string formado por los elementos de la lista y separados por ", ".
+    """
+    if validate_list(data_list):
+        data_str = ", ".join(data_list)
+        return data_str
+
+
+def get_last_id(product_list: list) -> int:
+    """Obtiene el ultimo id generado.
+
+    Args:
+        product_list (list): La lista de diccionarios con la info de los insumos.
+
+    Returns:
+        int: El ultimo id de la lista de diccionarios.
+    """
+    if validate_list(product_list):
+
+        for product in product_list:
+            last_id = product['id']
+
+        return last_id + 1
+    else:
+        return 0
+
+
+def request_data_new_product(product_list: list) -> dict:
+    """Le pide al usuario que ingrese los datos de un nuevo producto.
+
+    Args:
+        product_list (list): La lista de diccionarios con la info de los insumos.
+
+    Returns:
+        dict: Un diccionario que represente un producto.
+    """
+    if validate_list(product_list):
+        
+        product_id = get_last_id(product_list)
+        product_name = request_product_name()
+        brand_list = convert_list_brand_dict()
+        print_list_brand(brand_list)
+        product_brand = request_brand_user(brand_list)
+        product_price = request_price_product()
+        product_feature = request_features_product()
+        product_feature_str = convert_list_str(product_feature)
+
+        new_product = {
+        "id": product_id,
+        "nombre" : product_name,
+        "marca" : product_brand,
+        "precio" : product_price,
+        "caracteristicas" : product_feature_str
+        }
+
+        return new_product
+
+
+def add_new_product(product_list: list) -> list:
+    """Agrega un nuevo producto a la lista de insumos.
+
+    Args:
+        product_list (list): La lista de diccionarios a la que se le agregara un nuevo producto.
+
+    Returns:
+        list: La lista con el nuevo producto agregado.
+    """
+    while True:
+
+        new_product = request_data_new_product(product_list)
+        product_list.append(new_product)
+
+        if request_confirmation_user("\n¿Quiere seguir ingresando productos?"):
+            continue
+        else:
+            return product_list
+
+def request_extension() -> str:
+    """Le pide al usuario que ingrese una extensión en formato .json o .csv
+
+    Returns:
+        str: La extension que ingreso el usuario.
+    """
+    while True:
+        file_extension = request_data_user("\nIngrese el formato del archivo que desea exportar (json o csv)")
+        if file_extension != "json" and file_extension != "csv":
+            print('\n¡Error! Elija entre las opciones disponibles ("json" o "csv")')
+            continue
+        else:
+            return file_extension
+
+def save_list_file(data_list: list) -> None: 
+    """Guarda una lista en un archivo JSON o CSV.
+
+    Args:
+        data_list (list): La lista que se guardara en el archivo JSON o CSV.
+    """
+    if validate_list(data_list):
+
+        file_extension = request_extension()
+        if file_extension == "json":
+            file_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\json_file"
+            file_name = "insumos_actualizados.json"
+            save_list_json_file(data_list, file_path, file_name)
+            print("\nArchivo JSON creado con éxito.")
+        else:
+            file_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\csv_file"
+            file_name = "insumos_actualizados.csv"
+            save_list_csv_file(data_list, file_path, file_name)
+            print("\nArchivo CSV creado con éxito.")
+
+def infobaus_add_new_product(product_list: list) :
+    """Agrega un nuevo producto a la lista de productos.
+
+    Args:
+        product_list (list): La lista de diccionarios con la info de los productos.
+    """
+    if validate_list(product_list):
+
+        add_new_product(product_list)
+
+
+def infobaus_save_list_product_file(product_list: list) -> None:
+    """Guarda en un archivo JSON o CSV la lista de productos.
+
+    Args:
+        product_list (list): La lista de diccionarios a guardar en el archivo JSON o CSV.
+    """
+    if validate_list(product_list):
+        save_list_file(product_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

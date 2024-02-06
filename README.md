@@ -30,6 +30,7 @@
 * Guardar datos actualizados: Permite al usuario elegir el formato de exportación (CSV o JSON) y guarda todos los datos actualizados, incluyendo las altas.
 
 <h2>Requerimientos: </h2>
+
 * Python 3.x
 
 * Archivos Insumos.csv, marcas.txt
@@ -37,6 +38,7 @@
 * Librerías: json
   
 <h2>Uso</h2>
+
 * Clona el repositorio o descarga los archivos.
 
 * Ejecuta el programa main.py.

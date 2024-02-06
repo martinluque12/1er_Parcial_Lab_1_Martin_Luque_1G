@@ -60,7 +60,8 @@ def get_last_invoice_number() -> int:
         int: El numero de la ultima factura emitida.
     """
     try:
-        with open("last_invoice_number.txt", "r") as file:
+        file_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\invoices\\last_invoice_number.txt"
+        with open(file_path, "r") as file:
             return int(file.read().strip())
         
     except FileNotFoundError:
@@ -73,7 +74,8 @@ def update_last_invoice_number(new_number: int) -> None:
     Args:
         new_number (int): El numero de la nueva factura a emitir.
     """
-    with open("last_invoice_number.txt", "w") as file:
+    file_path = "1er_Parcial_Lab_1_Martin_Luque_1G\\invoices\\last_invoice_number.txt"
+    with open(file_path, "w") as file:
         file.write(str(new_number))
 
 

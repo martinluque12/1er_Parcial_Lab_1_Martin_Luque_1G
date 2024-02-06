@@ -31,11 +31,16 @@
 
 <h2>Requerimientos: </h2>
 * Python 3.x
+
 * Archivos Insumos.csv, marcas.txt
+* 
 * Librerías: json
+* 
 <h2>Uso</h2>
 * Clona el repositorio o descarga los archivos.
+
 * Ejecuta el programa main.py.
+  
 * Sigue las instrucciones en pantalla para utilizar las diferentes funcionalidades del programa.
 
 <div align="center">

@@ -15,7 +15,7 @@
 
 * Buscar insumo por característica: Permite buscar insumos que posean una característica específica ingresada por el usuario.
 
-* Listar insumos ordenados: Muestra los insumos ordenados por marca y, ante marcas iguales, por precio descendente, mostrando el ID, descripción, precio, marca y la primera característica de cada producto.
+* Listar insumos ordenados: Muestra los insumos ordenados por marca y, ante marcas iguales, por precio descendente, mostrando el ID, nombre, precio, marca y la primera característica de cada producto.
 
 * Realizar compras: Permite al usuario seleccionar productos de una marca y agregarlos al carrito de compras. Al finalizar, muestra el total de la compra y genera un archivo TXT con la factura si el usuario acepta la compra.
 
@@ -23,7 +23,7 @@
 
 * Leer Json: Muestra un listado con los insumos guardados en el archivo JSON generado en la opción 7.
 
-* Actualizar precios: Aplica un aumento del 8.4% a todos los productos debido a la inflación y guarda los productos actualizados en el archivo Insumos.csv.
+* Actualizar precios: Aplica un aumento del 8.4% a todos los productos debido a la inflación y guarda los productos actualizados en un archivo Insumos_actualizados.csv.
 
 * Agregar nuevo producto: Permite agregar un nuevo producto a la lista.
 

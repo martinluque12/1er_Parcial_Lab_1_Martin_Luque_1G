@@ -11,7 +11,7 @@
 
 * Listar cantidad por marca: Muestra todas las marcas disponibles junto con la cantidad de insumos que corresponden a cada una.
 
-* Listar insumos por marca: Muestra cada marca con el nombre del insumo y su precio correspondiente.
+* Listar insumos por marca: Muestra cada marca con el nombre del insumo.
 
 * Buscar insumo por característica: Permite buscar insumos que posean una característica específica ingresada por el usuario.
 
